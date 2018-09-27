@@ -43,8 +43,7 @@
           margin-top: 1.2em;
         }
 
-        .header {width:82%; box-shadow: none;}
-        .nav {width: 18%;}
+        .header {width:100%;}
       }
 
       @media screen and (min-width: 421px) {
@@ -56,16 +55,9 @@
         .top-news {
           width: 100%;
         }
-
-        .header {width:87%;}
-        .nav {width: 12%;}
-
       }
 
       @media screen and (min-width: 671px) {
-        .header {width:90%;}
-        .nav {width: 10%;}
-
         .hero {width: 70%; order: 1;}
         .weather {width: 30%; order: 2;}
         .top-news {width: 60%; order: 3;}
@@ -91,6 +83,26 @@
           <h1 class="header__title">
             The Brighton Times
           </h1>
+          <span id="menu" class="menu">
+            <span class="fas fa-bars"></span>
+          </span>
+    
+          <script>
+            /*
+            * Open the drawer when the menu ison is clicked.
+            */
+            var menu = document.querySelector('#menu');
+            var main = document.querySelector('main');
+            var drawer = document.querySelector('#drawer');
+      
+            menu.addEventListener('click', function(e) {
+              drawer.classList.toggle('open');
+              e.stopPropagation();
+            });
+            main.addEventListener('click', function() {
+              drawer.classList.remove('open');
+            });
+          </script>
         </div>
       </header>
 
@@ -103,7 +115,7 @@
         </ul>
       </nav>
 
-      <span id="menu" class="menu">
+      <!-- <span id="menu" class="menu">
         <span class="fas fa-bars"></span>
       </span>
 
@@ -122,7 +134,7 @@
         main.addEventListener('click', function() {
           drawer.classList.remove('open');
         });
-      </script>
+      </script> -->
 
       <main>
         <section class="content container">
